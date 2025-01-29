@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Angular js</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            ONE WAY DATA BINDING
+        </legend>
+           <div ng-app="application1" ng-controller="gopi">
+            <center>
+                <tt><h1>User name is:{{USE}}</h1></tt>
+            </center>
+
+           </div>
+    </fieldset>
+</body>
+<script>
+    var obj1=angular.module("application1",[])
+    obj1.controller("gopi",function($scope)
+{
+    $scope.USE="I AM VENKATA NAGA GOPI KAGGA"
+})
+</script>
+</html>

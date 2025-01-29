@@ -1,0 +1,564 @@
+ng-repeat:
+======
+It is a directive in AngularJS Framework which is used to fetch the data as per the 
+application reqn.
+
+
+Ex1:
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>AngularJS</title>
+
+</head>
+<body>
+    <div ng-app="application1" ng-controller="IHUB_IT">
+        <fieldset>
+            <legend>Product_Details</legend>
+            <hr>
+            <center>
+                <h1><tt>Product_Details</tt></h1>
+            </center>
+            <hr>
+            <center>
+                <table border="3">
+                    <tr>
+                        <th>Pid</th>
+                        <th>Pname</th>
+                        <th>Price</th>
+                        <th>Company</th>
+                        <th>M_date</th>
+                        <th>Exp_date</th>
+                    </tr>
+                    <tr ng-repeat="x1 in Product_Details">
+                        <td>{{x1.Pid}}</td>
+                        <td>{{x1.Pname}}</td>
+                        <td>{{x1.Price}}</td>
+                        <td>{{x1.Company}}</td>
+                        <td>{{x1.M_date}}</td>
+                        <td>{{x1.Exp_date}}</td>
+
+                    </tr>
+
+                </table>
+            </center>
+        </fieldset>
+
+    </div>
+    <script>
+        var obj1=angular.module("application1",[])
+        obj1.controller("IHUB_IT",function($scope)
+    {
+        $scope.Product_Details=[
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+        ]
+    })
+    </script>
+    
+ 
+
+
+</body>
+</html>
+
+
+Filters in AngularJS:
+============
+AngularJS supports Filters.The main objective of filters is to transform the data as per the
+application reqn.Following types of filters in Angular.In AngularJS filter can be define or
+declare(|)
+
+->uppercase
+->lowercase
+->currency
+->date
+->orderBy
+->filter
+
+
+Ex1:
+===
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>AngularJS</title>
+
+</head>
+<body>
+    <div ng-app="application1" ng-controller="IHUB_IT">
+        <fieldset>
+            <legend>Product_Details</legend>
+            <hr>
+            <center>
+                <h1><tt>Product_Details</tt></h1>
+            </center>
+            <hr>
+            <center>
+                <table border="3">
+                    <tr>
+                        <th>Pid</th>
+                        <th>Pname</th>
+                        <th>Price</th>
+                        <th>Company</th>
+                        <th>M_date</th>
+                        <th>Exp_date</th>
+                    </tr>
+                    <tr ng-repeat="x1 in Product_Details">
+                        <td>{{x1.Pid}}</td>
+                        <td>{{x1.Pname|uppercase}}</td>
+                        <td>{{x1.Price|currency}}</td>
+                        <td>{{x1.Company|lowercase}}</td>
+                        <td>{{x1.M_date}}</td>
+                        <td>{{x1.Exp_date}}</td>
+
+                    </tr>
+
+                </table>
+            </center>
+        </fieldset>
+
+    </div>
+    <script>
+        var obj1=angular.module("application1",[])
+        obj1.controller("IHUB_IT",function($scope)
+    {
+        $scope.Product_Details=[
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+        ]
+    })
+    </script>
+    
+ 
+
+
+</body>
+</html>
+
+
+Ex2:
+===
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>AngularJS</title>
+
+</head>
+<body>
+    <div ng-app="application1" ng-controller="IHUB_IT">
+        <fieldset>
+            <legend>Date_Filter(|)</legend>
+            <center>
+                <h1><tt>{{d1|date:'dd/MM/y'}}</tt></h1>
+            </center>
+        </fieldset>
+    </div>
+       
+    <script>
+        var obj1=angular.module("application1",[])
+        obj1.controller("IHUB_IT",function($scope)
+    {
+      $scope.d1 = new Date()
+    })
+    </script>
+    
+ 
+
+
+</body>
+</html>
+
+
+Ex3:
+===
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>AngularJS</title>
+
+</head>
+<body>
+    <div ng-app="application1" ng-controller="IHUB_IT">
+        <fieldset>
+            <legend>Date_Filter(|)</legend>
+            <center>
+                <h1><tt>{{d1|date:'MM/dd/y'}}</tt></h1>
+            </center>
+        </fieldset>
+    </div>
+       
+    <script>
+        var obj1=angular.module("application1",[])
+        obj1.controller("IHUB_IT",function($scope)
+    {
+      $scope.d1 = new Date()
+    })
+    </script>
+    
+ 
+
+
+</body>
+</html>
+
+orderBy:
+=====
+
+Ex1:
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>AngularJS</title>
+
+</head>
+<body>
+    <div ng-app="application1" ng-controller="IHUB_IT">
+        <fieldset>
+            <legend>Product_Details</legend>
+            <hr>
+            <center>
+                <h1><tt>Product_Details</tt></h1>
+            </center>
+            <hr>
+            <center>
+                <table border="3">
+                    <tr>
+                        <th>Pid</th>
+                        <th>Pname</th>
+                        <th>Price</th>
+                        <th>Company</th>
+                        <th>M_date</th>
+                        <th>Exp_date</th>
+                    </tr>
+                    <tr ng-repeat="x1 in Product_Details|orderBy:'Price'">
+                        <td>{{x1.Pid}}</td>
+                        <td>{{x1.Pname}}</td>
+                        <td>{{x1.Price}}</td>
+                        <td>{{x1.Company}}</td>
+                        <td>{{x1.M_date}}</td>
+                        <td>{{x1.Exp_date}}</td>
+
+                    </tr>
+
+                </table>
+            </center>
+        </fieldset>
+
+    </div>
+    <script>
+        var obj1=angular.module("application1",[])
+        obj1.controller("IHUB_IT",function($scope)
+    {
+        $scope.Product_Details=[
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+        ]
+    })
+    </script>
+    
+ 
+
+
+</body>
+</html>
+
+
+Ex2:
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>AngularJS</title>
+
+</head>
+<body>
+    <div ng-app="application1" ng-controller="IHUB_IT">
+        <fieldset>
+            <legend>Product_Details</legend>
+            <hr>
+            <center>
+                <h1><tt>Product_Details</tt></h1>
+            </center>
+            <hr>
+            <center>
+                <table border="3">
+                    <tr>
+                        <th>Pid</th>
+                        <th>Pname</th>
+                        <th>Price</th>
+                        <th>Company</th>
+                        <th>M_date</th>
+                        <th>Exp_date</th>
+                    </tr>
+                    <tr ng-repeat="x1 in Product_Details|orderBy:'Price'">
+                        <td>{{x1.Pid}}</td>
+                        <td>{{x1.Pname}}</td>
+                        <td>{{x1.Price}}</td>
+                        <td>{{x1.Company}}</td>
+                        <td>{{x1.M_date}}</td>
+                        <td>{{x1.Exp_date}}</td>
+
+                    </tr>
+
+                </table>
+            </center>
+        </fieldset>
+
+    </div>
+    <script>
+        var obj1=angular.module("application1",[])
+        obj1.controller("IHUB_IT",function($scope)
+    {
+        $scope.Product_Details=[
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+        ]
+    })
+    </script>
+    
+ 
+
+
+</body>
+</html>
+
+
+
+filter:
+===
+
+Ex1:
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>AngularJS</title>
+
+</head>
+<body>
+    <div ng-app="application1" ng-controller="IHUB_IT">
+        <fieldset>
+            <legend>Product_Details</legend>
+            <hr>
+            <center>
+                <h1><tt>Product_Details</tt></h1>
+            </center>
+            <hr>
+            <br>
+            <hr>
+            <center>
+                <form action="" method="post">
+                    <label for="">Search here :</label>
+                    <input type="text" placeholder="Type here to search" ng-model="obj1">
+                </form>
+            </center>
+            <hr>
+            <center>
+                <table border="3">
+                    <tr>
+                        <th>Pid</th>
+                        <th>Pname</th>
+                        <th>Price</th>
+                        <th>Company</th>
+                        <th>M_date</th>
+                        <th>Exp_date</th>
+                    </tr>
+                    <tr ng-repeat="x1 in Product_Details|filter:obj1">
+                        <td>{{x1.Pid}}</td>
+                        <td>{{x1.Pname}}</td>
+                        <td>{{x1.Price}}</td>
+                        <td>{{x1.Company}}</td>
+                        <td>{{x1.M_date}}</td>
+                        <td>{{x1.Exp_date}}</td>
+
+                    </tr>
+
+                </table>
+            </center>
+        </fieldset>
+
+    </div>
+    <script>
+        var obj1=angular.module("application1",[])
+        obj1.controller("IHUB_IT",function($scope)
+    {
+        $scope.Product_Details=[
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+            {"Pid":1001,"Pname":"Mobile_1","Price":26000,"Company":"Samsung","M_date":"12/1/2025","Exp_date":"12/1/2026"},
+            {"Pid":1002,"Pname":"Mobile_2","Price":29000,"Company":"Samsung","M_date":"14/1/2025","Exp_date":"14/1/2026"},
+            {"Pid":1003,"Pname":"Mobile_3","Price":39000,"Company":"Samsung","M_date":"17/1/2025","Exp_date":"17/1/2026"},
+            {"Pid":1004,"Pname":"Mobile_4","Price":40000,"Company":"Samsung","M_date":"19/1/2025","Exp_date":"21/1/2026"},
+            {"Pid":1005,"Pname":"Mobile_5","Price":42000,"Company":"Samsung","M_date":"23/1/2025","Exp_date":"23/1/2026"},
+        ]
+    })
+    </script>
+    
+ 
+
+
+</body>
+</html>
+
+
+ng-click:
+=====
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>AngularJS</title>
+
+</head>
+<body>
+    <div ng-app="application1" ng-controller="IHUB_IT">
+        <fieldset>
+            <legend>Angular_JS</legend>
+            <center>
+               
+                    <input type="submit" value="++" ng-click="Test_Case1()">
+                    <input type="submit" value="--" ng-click="Test_Case2()">
+                
+            </center>
+            <br>
+            <hr>
+            <center>
+            <h2>{{res1}}</h2>
+            </center>
+            <hr>
+           
+            
+           
+          
+        </fieldset>
+
+    </div>
+    <script>
+        var obj1=angular.module("application1",[])
+        obj1.controller("IHUB_IT",function($scope)
+    { 
+         $scope.res1=0 
+         $scope.Test_Case1=function()
+         {
+            $scope.res1++
+         }
+         $scope.Test_Case2=function()
+         {
+            $scope.res1--
+         }
+
+       
+    })
+    </script>
+    
+ 
+
+
+</body>
+</html>
+
+
+
+
+
+
+

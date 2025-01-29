@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Angular js</title>
+</head>
+<body>
+    <div ng-app="application1" ng-controller="gopi">
+        <fieldset>
+            <legend>NG-CLICK</legend>
+            <center>
+                <h1><tt>Using ng-click directive</tt></h1>
+            </center>
+            <hr>
+            <center>
+                <table border="3">
+                    <tr>
+                        <td><input type="submit" value="++"  ng-click="Test_case1()"></td>
+                        <td><input type="submit" value="--" ng-click="Test_case2()"></td>
+                    </tr>
+
+                </table>
+
+            </center>
+            <hr>
+            <br>
+            <center>
+            <h2>{{res1}}</h2>
+        </center>
+        </fieldset>
+
+    </div>
+<script>
+    var obj1=angular.module("application1",[])
+    obj1.controller("gopi",function($scope)
+    {
+        $scope.res1=0
+        $scope.Test_case1=function()
+        {
+            $scope.res1++
+
+        }
+        $scope.Test_case2=function()
+        {
+            $scope.res1--
+        }
+    })
+</script>
+    
+</body>
+</html>

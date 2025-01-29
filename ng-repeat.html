@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Angula js</title>
+</head>
+<body>
+    <div ng-app="application1" ng-controller="gopi">
+        <fieldset><legend>Ng-repeat</legend>
+            <center>
+                <h1><tt>product_details</tt></h1>
+            </center>
+            <hr>
+            <br>
+            <center>
+                <table border="3">
+                    <tr>
+                        <th>p_id</th>
+                        <th>p_name</th>
+                        <th>p_salary</th>
+                        <th>p_age</th>
+                    </tr>
+                    <tr ng-repeat="x1 in product_details">
+                        <td>{{x1.p_id}}</td>
+                        <td>{{x1.p_name}} </td>
+                        <td>{{x1.p_salary}}</td>
+                        <td>{{x1.p_age}}</td>
+                    </tr>
+
+                </table>
+            </center>
+        </fieldset>
+
+    </div>
+    
+</body>
+<script>
+    var obj1=angular.module("application1",[])
+    obj1.controller("gopi",function($scope)
+{
+    $scope.product_details=[
+        {"p_id":101,"p_name":"gopi","p_salary":1800000,"p_age":24},
+        {"p_id":102,"p_name":"kagga","p_salary":1900000,"p_age":25},
+        {"p_id":108,"p_name":"rama","p_salary":2200000,"p_age":22},
+        {"p_id":105,"p_name":"srikanth","p_salary":3300000,"p_age":21},
+        {"p_id":111,"p_name":"srinu","p_salary":4400000,"p_age":20}
+    ]
+})
+</script>
+</html>

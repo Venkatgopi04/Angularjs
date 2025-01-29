@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Angular js</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            TWO WAY DATA BINDING
+        </legend>
+        <center>
+            <h1><tt>Welcome to Two way data binding</tt></h1>
+            <hr>
+            <br>
+            <div ng-app="application1" ng-controller="gopi">
+                <table border="3">
+                    <form action="" method="post">
+                        <tr>
+                            <td><label for="">pid</label></td>
+                            <td><input type="text" placeholder="pid" ng-model="pid" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">pname</label></td>
+                            <td><input type="text" placeholder="pname" ng-model="pname" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">price</label></td>
+                            <td><input type="text" placeholder="price" ng-model="price" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">company</label></td>
+                            <td><input type="text" placeholder="company" ng-model="company" autocomplete="off"></td>
+                        </tr>
+                    </form>
+                </table>  
+        </center>
+        <hr>
+        <br>
+        <center>
+        <table border="3">
+            <tr>
+                <th>pid</th>
+                <th>pname</th>
+                <th>price</th>
+                <th>company</th>
+            </tr>
+            <tr>
+                <td>{{pid}}</td>
+                <td>{{pname}}</td>
+                <td>{{price}}</td>
+                <td>{{company}}</td>
+            </tr>
+
+
+        </table>
+    </center>
+    </div>
+       
+
+    </fieldset>
+    <script>
+        var obj1=angular.module("application1",[])
+        obj1.controller("gopi",function($scope)
+    {
+        $scope.pid=1001
+        $scope.pname="Gopi"
+        $scope.price="1800000"
+        $scope.company="TCS"
+    })
+    </script>
+    
+</body>
+</html>
